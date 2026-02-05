@@ -20,5 +20,5 @@ for index,row in data.iterrows():
 plt.scatter(x, y, c=colors)
 plt.xlabel("GDP Per Capita")
 plt.ylabel("Child Mortality Rate")
-plt.show()
 plt.savefig('../paper/figs/figure.png')
+plt.show()
