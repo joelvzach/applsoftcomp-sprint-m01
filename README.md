@@ -1,8 +1,8 @@
 # M01 Sprint Project
 
-::: {.callout-note title="The Sprint Challenge"}
-You have 60 minutes to clean catastrophic CSV data into tidy format while maintaining granular Git history. Then present your approach and results.
-:::
+>[!NOTE]
+> You have 60 minutes to clean catastrophic CSV data into tidy format while maintaining granular Git history. Then present your approach and results.
+>
 
 This sprint challenges you to clean messy Data into tidy format while maintaining granular Git history. **Time Limit:** 60 minutes of work, followed by class presentations. 
 
