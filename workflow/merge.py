@@ -1,6 +1,6 @@
 import pandas as pd
 
-gdp = pd.read_csv('../data/preprocessed/gdp-data.csv')
+gdp = pd.read_csv('../data/preprocessed/gdp-capita.csv')
 mortality = pd.read_csv('../data/preprocessed/child-motality.csv')
 
 data = pd.merge(gdp,mortality, how='outer')
