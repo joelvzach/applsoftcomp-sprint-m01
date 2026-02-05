@@ -6,3 +6,5 @@ mortality = pd.read_csv('../data/preprocessed/child-motality.csv')
 data = pd.merge(gdp,mortality, how='outer')
 
 data.to_csv('../data/preprocessed/merge_data.csv')
+
+print(f"Merged CSV written to ../data/preprocessed/merge_data.csv")
