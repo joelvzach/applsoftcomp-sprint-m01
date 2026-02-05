@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 import pandas as pd
 
 data = pd.read_csv('../data/preprocessed/merge_data.csv')
@@ -20,5 +21,8 @@ for index,row in data.iterrows():
 plt.scatter(x, y, c=colors)
 plt.xlabel("GDP Per Capita")
 plt.ylabel("Child Mortality Rate")
+green_patch = mpatches.Patch(color='green', label=str(max(years)))
+blue_patch = mpatches.Patch(color='blue', label=str(min(years)))
+plt.legend(handles=[green_patch, blue_patch], loc='upper right')
 plt.savefig('../paper/figs/figure.png')
 plt.show()
