@@ -1,6 +1,6 @@
 #!/bin/bash
 uv sync
-uv run python workflow/process_mortality.py
-uv run python workflow/process_gdp.py
-uv run python workflow/merge.py
-uv run python workflow/create_visualization.py
+uv run python process_mortality.py
+uv run python process_gdp.py
+uv run python merge.py
+uv run python create_visualization.py
