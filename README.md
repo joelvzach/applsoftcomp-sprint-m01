@@ -6,19 +6,35 @@
 
 ## The Challenge
 
-We'll use Gapminder World Data as the dataset for this sprint project. The csv files are under ./data folder. Your tasks are:
+We'll use Gapminder World Data as the dataset for this sprint project. The csv files are under ./data folder. Your tasks are organized into three branches:
 
+### Branch Structure
+
+You must create and work in three separate branches, merging each into `master` when complete:
+
+**Branch 1: `data-formatting`**
 1. Create the tidy version of each csv file. Save them in data/preprocessed.
-2. Merge the two csv files with columns `geo`, `name`, `mortality_rate`, `gdpcapita` `year` (the `geo` column must be the first column; the order of other columns are of your choice). 
-3. Create a scatter plot of Mortality rate (Y-axis) vs GDP per capita (X-axis) with colors indicating the year of the data sample.
-4. Save the figure in paper/figs and write a documentation in papers/NOTE.md.
+2. Merge the two csv files with columns `geo`, `name`, `mortality_rate`, `gdpcapita` `year` (the `geo` column must be the first column; the order of other columns are of your choice).
+3. Commit and push your work, then merge into `master`.
+
+**Branch 2: `visualization`**
+1. Create a branch from the updated `master`/`main` (after merging `data-formatting`).
+2. Create a scatter plot of Mortality rate (Y-axis) vs GDP per capita (X-axis) with colors indicating the year of the data sample.
+3. Save the figure in paper/figs.
+4. Commit and push your work, then merge into `master`.
+
+**Branch 3: `documentation`**
+1. Create a branch from the updated `master`/`main` (after merging `visualization`).
+2. Write a documentation in papers/NOTE.md explaining your data cleaning strategy, visualization choices, and key insights.
+3. Commit and push your work, then merge into `master`.
 
 Make atomic commits for each step (you can make multiple commits per step, which is encouraged).
 
 ## The Rules
 
 - **Time:** 60 minutes of work, followed by presentations.
-- **Version Control:** Every change must be committed and pushed. No batch commits. Your commit messages must explain why you made each change.
+- **Branching:** You must create three separate branches (`data-formatting`, `visualization`, `documentation`) and complete the corresponding tasks in each branch. Merge each branch into `master` after completing the tasks.
+- **Version Control:** Every change must be committed and pushed. No batch commits. Your commit messages must explain why you made each change. Each branch must have a clear commit history showing your progression through that phase of work.
 - **Requirements:** Final dataset must be truly tidy. No metadata in data cells, no implicit missing values, no ambiguous column names.
 
 ## Evaluation
@@ -29,9 +45,45 @@ Judges evaluate three dimensions:
 **Git History (30%):** Do commits tell a story? Are they atomic and well-described?
 **Documentation (40%):** Can you clearly explain your cleaning strategy and key decisions?
 
+## Git Workflow Quick Reference
+
+Here's the workflow you'll follow for each branch:
+
+```bash
+# Branch 1: Data Formatting
+git checkout -b data-formatting
+# ... do your data cleaning work, commit frequently ...
+git add .
+git commit -m "Your descriptive message"
+git push -u origin data-formatting
+git checkout master
+git merge data-formatting
+git push origin master
+
+# Branch 2: Visualization
+git checkout -b visualization
+# ... create your plots, commit frequently ...
+git add .
+git commit -m "Your descriptive message"
+git push -u origin visualization
+git checkout master
+git merge visualization
+git push origin master
+
+# Branch 3: Documentation
+git checkout -b documentation
+# ... write your notes, commit frequently ...
+git add .
+git commit -m "Your descriptive message"
+git push -u origin documentation
+git checkout master
+git merge documentation
+git push origin master
+```
+
 ## Submission
 
-Submit the link to your GitHub repository to Brightspace. 
+Submit the link to your GitHub repository to Brightspace. We will review your commit history across all branches.
 
 ## Set up
 
@@ -41,7 +93,7 @@ Open `pyproject.toml` in a text editor and change the project name and add your 
 
 If you want to install a Python package, run:
 
-```bash 
+```bash
 uv add <package-name>
 ```
 
@@ -56,7 +108,7 @@ First create a virtual environment for the project.
     mamba create -n project_env_name python=3.7
     mamba activate project_env_name
 
-Install `ipykernel` for Jupyter. 
+Install `ipykernel` for Jupyter.
 
     mamba install -y -c bioconda -c conda-forge ipykernel numpy pandas scipy matplotlib seaborn tqdm
 
@@ -66,32 +118,32 @@ Create a kernel for the virtual environment that you can use in Jupyter lab/note
 
 ## Kickstarter code
 
-```python 
+```python
 import pandas as pd
 
 # Load the data
 data_table = pd.read_csv('./data/data.csv')
 
-# Tidy the data 
-# e.g., pd.melt(), pd.pivot_table(), etc. or custom code (using for loops if needed) 
+# Tidy the data
+# e.g., pd.melt(), pd.pivot_table(), etc. or custom code (using for loops if needed)
 
-# Save the tidy data 
+# Save the tidy data
 # This is just a placeholder
 tidy_data_table.to_csv('./data/preprocessed/tidy_data.csv', index=False)
 ```
 
 
-```python 
+```python
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load the tidy data 
+# Load the tidy data
 tidy_mortality_data = pd.read_csv('./data/preprocessed/tidy_mortality_data.csv')
 tidy_gdp_data = pd.read_csv('./data/preprocessed/tidy_gdp_data.csv')
 
-# Merge the datasets with key column geo and year 
+# Merge the datasets with key column geo and year
 data_table = pd.merge(tidy_mortality_data, tidy_gdp_data, on=['geo', 'year'])
 
-# Plot the scatter plot 
+# Plot the scatter plot
 # Use sns.scatterplot plot with colors indicating the year of the data sample
 ```
