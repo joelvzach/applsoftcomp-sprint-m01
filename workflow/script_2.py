@@ -2,8 +2,8 @@
 import pandas as pd
 
 # --- file paths ---
-input_csv = "/home/john/Class_code/SSIE519/applsoftcomp-sprint-m01/data/raw/gdp-data.csv"
-output_csv = "/home/john/Class_code/SSIE519/applsoftcomp-sprint-m01/data/preprocessed/gdp-capita.csv"
+input_csv = "../data/raw/gdp-data.csv"
+output_csv = "../data/preprocessed/gdp-capita.csv"
 
 # --- read the data ---
 df = pd.read_csv(input_csv)
