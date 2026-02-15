@@ -45,7 +45,8 @@ The data shows a clear inverse correlation between GDP and child mortality. Afgh
 
 Historical data points (blue) cluster at low GDP and high mortality. Recent data points (green) spread across higher GDP and lower mortality ranges. This pattern demonstrates how economic development correlates with improved child health outcomes.
 
-### Data Coverage The dataset contains 195 countries across 301 years, giving us 58,695 observations. Countries like Andorra show zeros for early years where we replaced missing data with 0.0. This happened because some nations didn't exist or keep records in the 1800s.
+### Data Coverage
+The dataset contains 195 countries across 301 years, giving us 58,695 observations. Countries like Andorra show zeros for early years where we replaced missing data with 0.0. This happened because some nations didn't exist or keep records in the 1800s.
 
 ## Bottom Line
 
